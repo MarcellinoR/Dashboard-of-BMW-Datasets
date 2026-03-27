@@ -46,5 +46,3 @@ Dalam repository ini, saya menerapkan beberapa konsep statistika dan data scienc
 
 -----
 
-
-**Apakah ada bagian lain dari repository ini yang ingin Anda poles sebelum melakukan *push* pertama ke GitHub?**
