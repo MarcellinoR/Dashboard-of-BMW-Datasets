@@ -1,36 +1,50 @@
-🚗 BMW Transaction & Sales Analytics Dashboard
-📌 Deskripsi Proyek
-Repository ini berisi sistem pemantauan transaksi dan dashboard analitik untuk data penjualan kendaraan BMW. Proyek ini dirancang untuk memberikan wawasan mendalam mengenai performa penjualan, tren harga pasar, dan distribusi inventaris berdasarkan berbagai model (seperti Seri 3, Seri 5, X-Series, hingga varian elektrik i-Series).
+🚗 BMW Business Intelligence & Price Predictor
 
-Tujuannya adalah mengubah data transaksi mentah menjadi visualisasi interaktif yang mendukung pengambilan keputusan berbasis data (Data-Driven Decision Making).
+📌 Overview
 
-🚀 Fitur Utama
-Transaction Tracking: Pencatatan dan monitoring setiap transaksi penjualan secara real-time.
+Proyek ini adalah dashboard **Business Intelligence (BI)** interaktif yang dirancang khusus untuk menganalisis ekosistem data kendaraan BMW. Selain menyediakan visualisasi tren penjualan, dashboard ini dilengkapi dengan fitur **Smart Price Predictor** menggunakan pendekatan statistika untuk mengestimasi harga jual kendaraan.
 
-Sales Performance: Analisis pendapatan (revenue) bulanan dan tahunan.
+📊 Fitur Analisis Statistika
 
-Model Analysis: Perbandingan popularitas antar model BMW dan tren harga jual rata-rata (ASP).
+Dalam repository ini, saya menerapkan beberapa konsep statistika dan data science:
 
-Geospatial Insights: Visualisasi persebaran transaksi berdasarkan lokasi dealer/wilayah.
+1.  **Multiple Linear Regression**: Fitur prediksi harga menggunakan variabel *mileage* (jarak tempuh), *year* (tahun), dan *engineSize* (kapasitas mesin) untuk menghitung estimasi harga jual secara objektif.
+      * **Persamaan:** $Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3X_3 + \epsilon$
+2.  **Correlation Heatmap**: Analisis multivariat untuk melihat hubungan antar variabel teknis (seperti pengaruh `mpg` terhadap `price` atau `engineSize` terhadap `tax`).
+3.  **Distribution Analysis**: Menggunakan histogram dan donut chart untuk memahami komposisi transmisi dan jenis bahan bakar (Fuel Type) yang paling dominan di pasar.
 
-Interactive Filters: Filter data berdasarkan rentang waktu, tipe model, dan kondisi kendaraan (Baru/Bekas).
+## 🛠️ Stack Teknologi
 
-🛠️ Stack Teknologi
-Language: Python
+  * **Frontend & Dashboard:** Streamlit (dengan kustomisasi CSS Dark Mode).
+  * **Data Visualization:** Plotly Express & Graph Objects (Interaktif).
+  * **Machine Learning:** Scikit-Learn (Linear Regression).
+  * **Database Management:** SQLAlchemy & PyMySQL untuk koneksi database relasional.
 
-Dashboard: Streamlit / Plotly Dash
+## 🚀 Cara Menjalankan
 
-Data Manipulation: Pandas & NumPy
+1.  **Clone Repository:**
+    ```bash
+    git clone https://github.com/MarcellinoR/Dashboard-of-BMW-Datasets.git
+    cd Dashboard-of-BMW-Datasets
+    ```
+2.  **Install Library:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Konfigurasi Database:**
+    Pastikan MySQL Anda menyala dan memiliki database bernama `Car` dengan tabel `bmw`. Sesuaikan *connection string* di `app.py` jika diperlukan.
+4.  **Run Dashboard:**
+    ```bash
+    streamlit run app.py
+    ```
 
-Visualization: Plotly / Seaborn
+## 📂 Struktur Folder
 
-Database (Optional): SQLite / PostgreSQL
+  * `bmw.py`: Script utama dashboard dan logika machine learning.
+  * `.gitignore`: Mengabaikan file *cache* dan *virtual environment*.
+  * `requirements.txt`: Daftar dependensi library Python.
 
-📂 Struktur Folder
-/data: Kumpulan dataset transaksi (format CSV/SQL).
-app.py: File utama untuk menjalankan dashboard interaktif.
+-----
 
 
-/models: (Opsional) Model prediksi jika terdapat analisis estimasi harga.
-
-app.py: File utama untuk menjalankan dashboard interaktif.
+**Apakah ada bagian lain dari repository ini yang ingin Anda poles sebelum melakukan *push* pertama ke GitHub?**
